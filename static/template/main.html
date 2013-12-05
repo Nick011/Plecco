@@ -1,0 +1,62 @@
+<script id="user-template" type="text/x-handlebars-template">
+    {{#each users }}
+	  <div class="user">
+        {{ username}}
+      </div>
+    {{/each }}
+</script>
+
+<script id="message-template" type="text/x-handlebars-template">
+    <div>
+        <p><b>{{ username }}:</b> {{ body }}</p>
+    </div>
+</script>
+
+<script id="search-template" type="text/x-handlebars-template">
+    {{#each results }}
+        <div>
+            <div class="control">
+    	       <div id="{{ id }}" class="ico_circle_plus add icon"></div>
+            </div>
+            <div class="preview icon" id="{{ id }}">
+                <img src="{{ thumbnail }}" height="45" width="60" alt="preview {{ title }}" />
+            </div>
+            <div class="content">
+            	<p>
+                	{{ title }}
+                	{{ author }}
+                    {{ length }}
+                </p>
+                <p>
+                	{{ content }}
+                </p>
+            </div>
+        </div>  
+    {{/each }}
+</script>
+
+<script id="playlist-template" type="text/x-handlebars-template">
+    {{#each videos }}
+    	<div id="{{ _id }}">
+            <div class="top ico_eject icon"></div>
+            <div class="content">
+                {{ title }}
+            </div>
+            <div class="ico_remove_2 remove"></div>
+    	</div>
+    {{/each }}
+</script>
+
+<script id="vj-template" type="text/x-handlebars-template">
+    {{#each vj }}
+    	<div class="vj-container">
+    	{{#if name }}
+    		<div class="btn-plain {{#if spinning }} spinning {{/if }}">
+                {{ username }}
+            </div>
+    	{{ else }}
+    		<button class="btn-success">VJ Spot</button>
+    	{{/if }} 
+    	</div>	
+    {{/each }}
+</script>
