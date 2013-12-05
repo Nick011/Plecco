@@ -1,0 +1,51 @@
+{{> nav }}
+<div class="container">
+	<div class="create-room-container">
+		<div class="frm-container">
+			<div class="close">X</div>
+			<form name="new_room" id="new_room" action="/room/create/" method="POST">
+				<input type="hidden" name="_csrf" value="{{ csrf_token }}">
+				<div>
+					<label for="name">Room Name </label>
+					<input type="text" name="name" id="name" placeholder=" room name" value="">
+				</div>
+				<div>
+					<label for="description">Description </label>
+					<textarea name="description" id="description"></textarea>
+				</div>
+				<div class="btn-container">
+					<button class="btn-alert">Create</button>
+				</div>
+			</form>
+		</div>
+		<div class="create-room-tab">
+			<a href="#">Create Room</a>
+		</div>			
+	</div>
+
+	<div class="room-list">
+		<div>
+			<ul>
+				{{#each rooms }}
+				<li>
+					<a href="/room/{{ slug }}">
+					<div>
+						<div id="{{ slug }}" class="room-info">
+							<h2>{{ name }}</h2>
+							<p>{{ description }}</p>
+						</div>
+						<div class="room-count">
+							<span>{{ users.length }}</span> Users
+						</div>
+					</div>
+					</a>
+				</li>
+				{{/each }}				
+			</ul>
+		</div>
+	</div>
+</div>
+{{> footer }}
+
+<script src="/static/script/libs/jquery.min.js"></script>
+<script src="/static/script/lobby.js"></script>

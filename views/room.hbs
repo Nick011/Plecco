@@ -1,0 +1,120 @@
+<div id="fb-root"></div>
+<script>
+	(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=416037728445152";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+
+{{> nav }}
+<div class="container">
+	<div class="player-container">
+		<div class="vjs">
+			<div class="vj-container">
+				<button class="btn-success">VJ Spot</button>
+			</div>
+			<div class="vj-container">
+				<button class="btn-success">VJ Spot</button>
+			</div>
+			<div class="vj-container">
+				<button class="btn-success">VJ Spot</button>
+			</div>
+			<div class="vj-container">
+				<button class="btn-success">VJ Spot</button>
+			</div>
+		</div>
+
+		<div class="player">
+			<div id="mainPlayer">
+				<!-- dynamic content, see /static/js/room.js -->
+			</div>
+		</div>
+
+		<div class="controls">
+			<!-- dynamic content, see /static/js/room.js -->
+		</div>
+	</div>
+
+	<div class="chat-container">
+		<div class="new-message">
+			<form name="new-message" id="new-message">
+				<input type="text" autocomplete="off" name="message" id="message" placeholder="Chat Message">
+				<button class="btn-alert">Send</button>
+			</form>
+			
+			<div class="messages">
+				<!-- dynamic content, see /static/js/room.js -->
+			</div>
+			
+			<div class="audience-container">
+				<h3>Audience</h3>
+				<div class="audience">
+					<!-- dynamic content, see /static/js/room.js -->
+				</div>
+			</div>		
+		</div>
+	</div>
+
+	<div class="interaction-container">
+		<div class="skip-container">
+			<button class="btn-alert">Skip</button>
+			<div class="progress-bar">
+				<div class="progress"></div>
+			</div>
+		</div>
+		<div class="social-container">
+			<div class="facebook-share">
+				<div class="fb-like" data-href="http://plec.co" data-send="false" data-width="200" data-show-faces="true" data-font="verdana"></div>
+			</div>
+			<div class="twitter-share">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-text="I'm hanging out watching videos on Plecco! Come join me." data-size="large">Tweet</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="search-container">
+		<div class="search">
+			<form name="search" id="search" action="">
+				<input type="text" autocomplete="off" name="query" id="query" placeholder="Search Videos">
+				<button class="btn-alert">Search</button>
+			</form>
+			<div class="results">
+				<!-- dynamic content, see /static/js/room.js -->
+			</div>
+		</div>		
+	</div>
+
+	<div class="playlist-container">
+		<h3>Playlist</h3>
+		<div class="playlist">
+			<!-- dynamic content, see /static/js/room.js -->
+		</div>
+	</div>
+
+</div>
+
+<div class="overlay_container">
+	<div class="dimmer"></div>
+	<div class="overlay">
+		<iframe id="overlayPlayer" width="900" height="500">
+
+		</iframe>
+	</div>
+</div>
+{{> footer }}
+
+<script>
+	var ROOM = '{{ slug }}',
+		SESSION = '{{ session }}';
+
+	//twitter tweet code
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+<script src="/static/script/libs/jquery.min.js"></script>
+<script src="/static/script/libs/jquery-ui-1.8.22.custom.min.js"></script>
+<script src="/static/script/socket.js"></script>
+<script src="/static/script/libs/handlebars.js"></script>
+<script src="/static/script/room.js"></script>

@@ -1,0 +1,60 @@
+<script id="user-template" type="text/x-handlebars-template">
+    <ul>
+	    {{#each users }}
+		  <li>{{ name.first }} {{ name.last }}</li>
+	    {{/each }}
+    </ul>
+</script>
+
+<script id="message-template" type="text/x-handlebars-template">
+    <div>
+        <p><b>{{ username }}:</b> {{ body }}</p>
+    </div>
+</script>
+
+<script id="search-template" type="text/x-handlebars-template">
+    {{#each results }}
+        <div>
+            <div class="control">
+    	       <button id="{{ id }}" class="btn_add">ADD</button>
+            </div>
+            <div class="content">
+            	<p>
+                	{{ title }}
+                	{{ author }}
+                    {{ length }}
+                </p>
+                <p>
+                	{{ content }}
+                </p>
+            </div>
+        </div>  
+    {{/each }}
+</script>
+
+<script id="playlist-template" type="text/x-handlebars-template">
+    {{#each videos }}
+    	<div id="{{ _id }}">
+    	    <b>{{ artist }}</b><br />{{ title }} - <a href="#" id="{{ _id }}" class="remove">X</a>
+    	</div>
+    {{/each }}
+</script>
+
+<script id="vj-template" type="text/x-handlebars-template">
+    {{#each vj }}
+    	<div class="vj-container">
+    	{{#if name }}
+    		<span class="label">{{ name.first }} {{ name.last }}</span>
+    	{{ else }}
+    		<button class="btn-plain">VJ Spot</button>
+    	{{/if }} 
+    	{{#if spinning }}
+    	    {{#if skip }}
+    		<br><span id="skip" class="label important">Skip</span>
+    	    {{ else }}
+    		<br><span class="label warning">Playing</span>
+    	    {{/if }}
+    	{{/if }}
+    	</div>	
+    {{/each }}
+</script>
