@@ -31,7 +31,7 @@ var connect = require('connect'),
 
 //create a server, set io listener
     app = express(),
-    server = app.listen(parseInt(argv.port)),
+    server = app.listen(parseInt(argv.port || 8010)),
 
 //initiate socket io and set the redis store
     sio = require('socket.io'),
