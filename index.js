@@ -151,7 +151,6 @@ io.configure(function() {
     io.set('transports', ['websocket']);
     
     //authorize socket connection
-    /*
     io.set('authorization', function(handshakeData, callback) {
         console.log(JSON.stringify(handshakeData));
         var referer = handshakeData.headers.referer;
@@ -162,7 +161,6 @@ io.configure(function() {
             callback(null, true);
         }
     });
-*/
 });
 
 var sessionSocket = new SessionSocket(io, exStore, cookieParser);
